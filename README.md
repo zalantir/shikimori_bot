@@ -13,40 +13,12 @@ https://t.me/FastShikimoriBot
 Данные OAuth2-приложения Shikimori.
 Создаются здесь:
 https://shikimori.one/oauth/applications
-#### Если бот развернут на сервере с публичным HTTPS-доменом:
-
+#### SHIKI_REDIRECT_URI
+Адресс вашего публичного сервера
 ```
 SHIKI_REDIRECT_URI="https://your-domain.com/shiki/callback"
 ```
 Этот же адрес нужно указать в настройках OAuth-приложения на Shikimori в поле Redirect URL.
-
-#### Если у вас нет публичного адреса можно использовать ngrok
-
-```
-NGROK_AUTHTOKEN
-```
-Берётся из личного кабинета:
-https://dashboard.ngrok.com/get-started/your-authtoken
-
-В `config.py`  включить режим ngrok
-```
-IS_NGROK = True
-```
-При запуске бот поднимет туннель к локальному серверу (`localhost:5000`).
-
-В консоли появится публичный адрес вида:
-
-```
-https://random-id.ngrok.io
-```
-Тогда `SHIKI_REDIRECT_URI` автоматически станет:
-```
-https://random-id.ngrok.io/shiki/callback
-```
-Этот адрес нужно указать в настройках OAuth-приложения Shikimori
-
-⚠️ Важно:  
-ngrok выдаёт новый адрес при каждом запуске (если нет платного фиксированного домена), поэтому Redirect URL на Shikimori придётся обновлять каждый раз.
 
 ### Работа с ботом
 
